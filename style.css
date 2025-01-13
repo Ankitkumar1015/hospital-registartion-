@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: rgb(157, 197, 234);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Row layout for name, age, gender, email, and phone */
+.row {
+    display: flex;
+    gap: 20px; /* Space between input groups */
+}
+
+.row .input-group {
+    flex: 1; /* Allow input groups to grow equally */
+}
+
+/* Style for input fields */
+label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4CAF50; /* Green */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px; /* Minimum height for textarea */
+}
+
+/* Style for the consent checkbox */
+.consent {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between checkbox and label */
+    margin: 10px 0; /* Margin for consent section */
+}
+
+.consent input[type="checkbox"] {
+    width: auto; /* Default checkbox size */
+}
+
+.consent label {
+    margin: 0; /* No margin for label */
+    font-weight: normal; /* Normal weight for consent label */
+}
+
+/* Submit button */
+.btn {
+    background-color: #4CAF50; /* Green */
+    color: white; /* White text */
+    padding: 12px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for button text */
+    font-weight: bold; /* Bold text for button */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+   .container {
+       padding: 20px; /* Reduced padding on smaller screens */
+   }
+   
+   .row {
+       flex-direction: column; /* Stack inputs vertically on small screens */
+       gap: 15px; /* Smaller gap between inputs in column layout */
+   }
+}
+
+/* Error state for invalid inputs */
+input:invalid, select:invalid, textarea:invalid {
+   border-color: #ff6b6b; /* Red for errors */
+}
+
+/* Success state for valid inputs */
+input:valid:not(:placeholder-shown), 
+select:valid:not(:placeholder-shown), 
+textarea:valid:not(:placeholder-shown) {
+   border-color: #4CAF50; /* Green for valid inputs */
+}
